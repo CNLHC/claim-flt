@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import "dayjs/plugin/relativeTime";
@@ -33,6 +34,7 @@ export default function RootLayout({
           )}
         >
           {children}
+          <Analytics />
         </body>
       </html>
     </Web3ModalProvider>
