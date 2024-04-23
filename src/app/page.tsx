@@ -1,5 +1,6 @@
 import { IconBrandGithubFilled, IconBrandX } from "@tabler/icons-react";
-import { ConnectButton, UnlockStat } from "./client";
+import { UnlockStat } from "./client";
+import { ConnectButton } from "./components/connect-button";
 
 const Footer = () => {
   return (
