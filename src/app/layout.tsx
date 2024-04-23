@@ -1,4 +1,6 @@
 import Clarity from "@/lib/clarity";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import dayjs from "dayjs";
@@ -18,7 +20,7 @@ const fontSans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Claim Your FLT DROP",
+  title: "Claim Locked FLT",
   description: "",
 };
 export default function RootLayout({
@@ -43,6 +45,9 @@ export default function RootLayout({
           {children}
           <Analytics />
         </body>
+        <GoogleAnalytics
+          gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-5559MJVSD8"}
+        />
       </html>
     </Web3ModalProvider>
   );
