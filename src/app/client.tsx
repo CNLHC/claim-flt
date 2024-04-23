@@ -78,14 +78,14 @@ const ClaimCountDown = (p: { d: unknown }) => {
   const diff = unFreezeAt.diff(dayjs(now), "s");
   const duration = dayjs
     .duration(diff, "s")
-    .format("M [mon] DD [days] HH [h] s [sec] ");
+    .format("M [mon] DD [days] H [h] mm [m] s [s] ");
 
   return (
     <div className="text-center">
       <div className="text-sm">
         Unlock at {unFreezeAt.format("YY-MM-DD HH:mm:ss ZZ")}{" "}
       </div>
-      <div className="text-2xl font-bold font-mono">{duration}</div>
+      <div className="text-xl font-bold font-mono">{duration}</div>
     </div>
   );
 };
