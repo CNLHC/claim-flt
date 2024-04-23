@@ -1,3 +1,4 @@
+import Clarity from "@/lib/clarity";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import dayjs from "dayjs";
@@ -9,6 +10,7 @@ import "./globals.css";
 import Web3ModalProvider from "./web3";
 
 dayjs.extend(duration);
+Clarity.init(process.env.NEXT_PUBLIC_CLARITY_ID);
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -27,6 +29,11 @@ export default function RootLayout({
   return (
     <Web3ModalProvider>
       <html lang="en">
+        <head>
+          <script type="text/javascript"></script>
+          <script type="text/javascript"></script>
+        </head>
+
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",

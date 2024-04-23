@@ -3,6 +3,7 @@ import { Button, ButtonLoading } from "@/components/ui/button";
 import BigNumber from "bignumber.js";
 import dayjs from "dayjs";
 
+import Clarity from "@/lib/clarity";
 import { FLTDropABI, FLTDropAddr } from "@/lib/flt/abi";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { Loader2 } from "lucide-react";
@@ -25,6 +26,12 @@ export const useTime = (refreshCycle = 100) => {
 export const ConnectButton = () => {
   const { address, status } = useAccount();
   const { open } = useWeb3Modal();
+
+  useEffect(() => {
+    if (status == "connected") {
+      Clarity.identify(address, {});
+    }
+  }, [address, status]);
 
   return match(status)
     .with("connecting", () => <ButtonLoading>connecting </ButtonLoading>)
