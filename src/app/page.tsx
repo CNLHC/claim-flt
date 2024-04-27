@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { IconBrandGithubFilled, IconBrandX } from "@tabler/icons-react";
 import { UnlockStat } from "./client";
 import { ConnectButton } from "./components/connect-button";
@@ -26,6 +27,18 @@ export default function Home() {
           <UnlockStat />
           <div className="mt-4">
             <ConnectButton />
+          </div>
+
+          <div className="mt-4">
+            <Button asChild variant={"link"} className="text-xs">
+              <a
+                href="https://github.com/CNLHC/claim-flt"
+                target="_blank"
+                referrerPolicy="no-referrer"
+              >
+                view source code
+              </a>
+            </Button>
           </div>
         </div>
       </div>
