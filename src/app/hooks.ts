@@ -63,7 +63,7 @@ export const useFltDropState = () => {
     if (fltCount && fltCount > 0) {
       return "valid" as const;
     }
-    if (fltCount && fltCount == 0) {
+    if (!fltCount || fltCount == 0) {
       return "claimed" as const;
     }
     return "unknown" as const;
